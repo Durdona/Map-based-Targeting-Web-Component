@@ -19,7 +19,7 @@
       <fieldset class="fieldset box">
         <legend class="label"></legend>
         <div v-if="activetab === 1" class="radial-search-tab">
-          <!-- <p
+          <p
             id="validationError"
             class="content"
             v-if="radialTab.requiredFieldErrors.length"
@@ -33,7 +33,7 @@
               {{ requiredFieldError }}
             </li>
           </ul>
-          </p>-->
+          </p>
           <!-- custom required field error message on missing input fields for radial search tab -->
           <div class="columns is-desktop radial-first-row">
             <div class="field column is-8">
@@ -512,9 +512,12 @@ export default {
 </script>
 
 <style>
-.tabs:not(:last-child) {
-  margin-bottom: 0;
+.info {
+  color: red;
+  font-weight: 400;
+  font-size: 1.1rem;;
 }
+
 .fieldset {
   /* background: rgba(228, 241, 254, 0.8); */
   background: rgba(255, 248, 237, 0.6);
@@ -528,6 +531,9 @@ export default {
   border-color: #3273dc;
   color: #fff;
   z-index: 1;
+}
+.tabs:not(:last-child) {
+  margin-bottom: 0;
 }
 .result-box {
   box-shadow: 0 0.5em 1em -0.25em rgba(10, 10, 10, 0.4);
