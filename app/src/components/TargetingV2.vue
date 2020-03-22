@@ -45,12 +45,33 @@
             </div>
           </div>
         </div>
+
+        <div class="geojson-search-tab">
+          <div v-if="activetab === 2" class="columns is-desktop geojson-first-row">
+            <div class="column is-9 geojson-editor">
+              <v-jsoneditor :plus="true" v-bind:style="{ 'min-height': '190px' }"></v-jsoneditor>
+            </div>
+            <div class="column">
+              <p class="control">
+                <a class="button is-primary is-fullwidth">Submit</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="columns geojson-second-row">
+            <div class="column is-9"></div>
+          </div>
+        </div>
       </fieldset>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from "vue";
+
+import VJsoneditor from "v-jsoneditor";
+Vue.use(VJsoneditor);
 export default {
   name: "MemberTargetingVersion2",
   data() {
@@ -58,7 +79,9 @@ export default {
       activetab: 1
     };
   },
-  components: {},
+  components: {
+    VJsoneditor
+  },
   methods: {}
 };
 </script>
